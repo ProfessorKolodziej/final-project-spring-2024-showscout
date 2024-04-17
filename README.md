@@ -1,8 +1,8 @@
-# Final Project (Replace with your project name)
+# ShowScout
 
 ## Description
 
-Please add a brief description of your final project here.
+ShowScout is a search engine that makes finding live entertainment easier than before. By combining event listings from a variety of ticket retailers, ShowScout currates show lists that can't be found anywhere else. Users can visit 
 
 ## Project Documentation
 

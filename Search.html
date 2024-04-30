@@ -3,7 +3,7 @@
 
 <head>
 	<title>ShowScout</title>
-	<meta name="description" content="Show scout makes finding live entertainment easy." />
+	<meta name="description" content="ShowScout makes finding live entertainment easy." />
 	<meta charset="UTF-8">
 	<meta name="author" content="Jack Culton">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +13,13 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
 		rel="stylesheet">
+	<script src="js/scripts.js"></script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpCs4wkYJ0glcxtqZ3X6SXusegRGVuKLM&libraries=visualization,places"
+		async defer></script>
+	<script
+		src="https://ticketmaster-api-staging.github.io/products-and-docs/widgets/map/1.0.0/lib/main-widget.js"></script>
+
 </head>
 
 
@@ -41,7 +48,7 @@
 						<label for="concert">Concert</label>
 						<input class="radio" type="radio" id="Comedy" value="Comedy" name="Category">
 						<label for="comedy">Comedy</label>
-						<input class="radio" type="radio" id="random-category" value="Random" name="Category">
+						<input class="radio" type="radio" id="random-category" value="Random" name="Category" checked>
 						<label for="random-category">Random</label>
 					</div>
 					<div class="search-time">
@@ -52,7 +59,7 @@
 						<label for="tomorrow">Tomorrow</label>
 						<input class="radio" type="date" id="date" value="Select Date" name="Date">
 						<label for="date">Select Date</label>
-						<input class="radio" type="radio" id="random-date" value="Random" name="Date">
+						<input class="radio" type="radio" id="random-date" value="Random" name="Date" checked>
 						<label for="random-date">Random</label>
 
 					</div>
@@ -64,13 +71,13 @@
 						<label for="10">10mi</label>
 						<input class="radio" type="radio" id="15" value="15mi" name="Location">
 						<label for="15">15mi</label>
-						<input class="radio" type="radio" id="random-location" value="Random" name="Location">
+						<input class="radio" type="radio" id="random-location" value="Random" name="Location" checked>
 						<label for="random-location">Random</label>
 
 						<input type="text" placeholder="Enter Zip Code" name="Location">
 					</div>
 					<div class="search-options">
-						<button id="searchButton">Search</button>
+						<button type="button" id="searchButton">Search</button>
 						<input type="reset" value="Reset">
 					</div>
 				</fieldset>
@@ -79,7 +86,18 @@
 		</section>
 		<pre id="log"></pre>
 
+		<div w-type="map" w-tmapikey="yUVLN9qdGfA0nVpOECDyuYT7ekGADMu3"
+			w-googleapikey="AIzaSyDpCs4wkYJ0glcxtqZ3X6SXusegRGVuKLM" w-keyword="" w-theme="simple" w-colorscheme="light"
+			w-width="600" w-height="400" w-size="25" w-border="1" w-borderradius="4" w-postalcode="02215" w-radius="25"
+			w-countrycode="US" w-city="Boston" w-period="week" w-layout="vertical" w-attractionid="" w-promoterid=""
+			w-venueid="" w-affiliateid="" w-segmentid="" w-proportion="custom" w-geoposition="off" w-source="ticketmaster"
+			w-country="" w-latlong=""></div>
 
+		<script
+			src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpCs4wkYJ0glcxtqZ3X6SXusegRGVuKLM&libraries=visualization,places"
+			async defer></script>
+		<script
+			src="https://ticketmaster-api-staging.github.io/products-and-docs/widgets/map/1.0.0/lib/main-widget.js"></script>
 
 		<section id="about">
 			<h2>About</h2>
@@ -98,7 +116,6 @@
 			</ul>
 		</section>
 	</main>
-	<script src="scripts.js"></script>
 
 </body>
 

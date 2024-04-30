@@ -6,26 +6,40 @@
 // - Run npm run test regularly to check autograding
 // - You'll need to link this file to your HTML :)
 
-<script>
-	document.addEventListener('DOMContentLoaded', function () {
-		// Function to remove highlights from all buttons
-		function clearHighlights() {
-			document.querySelectorAll('input[type=button]').forEach(function (button) {
-				button.classList.remove('highlight');
+
+// Search Results Generator ??
+document.getElementById('searchButton').addEventListener('click', function () {
+	const category = document.querySelector('input[name="Category"]').value;
+	const date = document.querySelector('input[name="Date"]').value;
+	const radius = document.querySelector('input[name="Location"]').value;
+
+	let apiUrl = `https://app.ticketmaster.com/discovery/v2/events.json?apikey=yUVLN9qdGfA0nVpOECDyuYT7ekGADMu3&size=10`;
+
+	if (zipCode && radius !== 'Random') {
+		apiUrl += `&postalCode=${zipCode}&radius=${radius}`;
+	}
+	if (category !== 'Random') {
+		apiUrl += `&classificationName=${encodeURIComponent(category)}`;
+	}
+	if (date !== 'Random' && date !== '') {
+		apiUrl += `&startDateTime=${date}T00:00:00Z`;
+	}
+
+	axios.get(apiUrl)
+		.then(response => {
+			const events = response.data._embedded.events;
+			const resultsDiv = document.getElementById('results');
+			resultsDiv.innerHTML = ''; // Clear previous results
+			events.forEach(event => {
+				const eventDiv = document.createElement('div');
+				eventDiv.innerHTML = `<h4>${event.name}</h4><p>${event.dates.start.localDate}</p>`;
+				resultsDiv.appendChild(eventDiv);
 			});
-		}
-
-  // Function to handle button click and highlight the clicked button
-		function handleButtonClick(event) {
-		clearHighlights();
-	event.target.classList.add('highlight'); // Add a class to highlight the button
-  }
-
-	// Add event listeners to all button elements
-	const buttons = document.querySelectorAll('input[type=button]');
-	buttons.forEach(function (button) {
-		button.addEventListener('click', handleButtonClick);
-  });
+		})
+		.catch(error => {
+			console.error('Failed to fetch events:', error);
+			document.getElementById('results').innerText = 'Failed to fetch events';
+		});
 });
+console.log(apiUrl);
 
-</script>

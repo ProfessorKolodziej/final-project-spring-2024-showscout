@@ -15,6 +15,60 @@ to help you out.
 	--size-xl: 1200px;
 */
 
+
+/* Top Navigation */
+.topnav {
+	background-color: #364864;
+	color: #fff;
+	padding: 10px;
+	text-align: left;
+}
+
+/* Keeps menu items spread*/
+
+li {
+	display: inline;
+}
+
+/* Nav links*/
+.topnav a {
+	color: #f2f2f2;
+	text-align: right;
+	padding: 10px 10px;
+	text-decoration: none;
+	font-size: 17px;
+	position: sticky;
+	left: 100;
+	display: inline
+}
+
+/* Links on hover */
+.topnav a:hover {
+	background-color: #dddddd;
+	color: black;
+}
+
+/* Active link */
+.topnav a.active {
+	background-color: #2d5595e4;
+	color: white;
+}
+
+.radio {}
+
+input[type="radio"]:hover {
+	background-color: #110b0b;
+	color: black;
+}
+
+input[type="radio"] {
+	font-family: 'Raleway', sans-serif;
+}
+
+
+/* Search Styling*/
+
+
 h1 {
 	color: var(--color-primary);
 }
@@ -41,14 +95,6 @@ body {
 	font-family: 'Raleway', sans-serif;
 }
 
-header {
-	background-color: #364864;
-	color: #fff;
-
-	padding: 20px;
-	text-align: left;
-}
-
 main {
 	padding: 20px;
 }
@@ -61,48 +107,6 @@ h2 {
 	margin-top: 20px;
 }
 
-/* Style the form */
-#search-form {
-	background-color: #f0f0f0;
-	padding: 20px;
-}
-
-#search-form h2,
-#about h2,
-#sources h2 {
-	margin-bottom: 15px;
-}
-
-.search-category,
-.search-time,
-.search-location {
-	margin-bottom: 10px;
-}
-
-.search-category input,
-.search-time input,
-.search-location input {
-	padding: 10px;
-	margin-right: 5px;
-	border: 1px solid #ddd;
-	background-color: #fff;
-}
-
-.search-location input[type="text"] {
-	border: 1px solid #ccc;
-}
-
-.search-submit input[type="submit"] {
-	padding: 10px 20px;
-	border: none;
-	background-color: #007bff;
-	color: white;
-	cursor: pointer;
-}
-
-.search-submit input[type="submit"]:hover {
-	background-color: #0056b3;
-}
 
 /* About section styles */
 #about {
@@ -129,4 +133,8 @@ h2 {
 .highlight {
 	background-color: #aaa;
 	color: black;
+}
+
+#events {
+	color: #110b0b
 }

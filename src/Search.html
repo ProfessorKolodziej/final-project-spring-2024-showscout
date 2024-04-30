@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>ShowScout</title>
+	<meta name="description" content="Show scout makes finding live entertainment easy." />
+	<meta charset="UTF-8">
+	<meta name="author" content="Jack Culton">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="icon" type="image/x-icon" href="/images/favicon.webp">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+		rel="stylesheet">
+</head>
+
+
+<body>
+	<div class="topnav">
+		<header>
+			<h1>ShowScout</h1>
+		</header>
+		<ul>
+			<li><a class="active" href="#Search">Search</a></li>
+			<li><a href="#All Shows">All Shows</a></li>
+			<li><a href="#About">About</a></li>
+		</ul>
+	</div>
+	<main>
+		<section id="search-form">
+			<h2>Find Live Entertainment</h2>
+			<form id="searchForm">
+				<fieldset>
+					<legend>Select your preferences for each category</legend>
+					<div class="search-category">
+						<h3>Category</h3>
+						<input class="radio" type="radio" id="sport" value="Sport" name="Category">
+						<label for="sport">Sport</label>
+						<input class="radio" type="radio" id="concert" value="Concert" name="Category">
+						<label for="concert">Concert</label>
+						<input class="radio" type="radio" id="Comedy" value="Comedy" name="Category">
+						<label for="comedy">Comedy</label>
+						<input class="radio" type="radio" id="random-category" value="Random" name="Category">
+						<label for="random-category">Random</label>
+					</div>
+					<div class="search-time">
+						<h3>Date</h3>
+						<input class="radio" type="radio" id="today" value="Today" name="Date">
+						<label for="today">Today</label>
+						<input class="radio" type="radio" id="tomorrow" value="Tomorrow" name="Date">
+						<label for="tomorrow">Tomorrow</label>
+						<input class="radio" type="date" id="date" value="Select Date" name="Date">
+						<label for="date">Select Date</label>
+						<input class="radio" type="radio" id="random-date" value="Random" name="Date">
+						<label for="random-date">Random</label>
+
+					</div>
+					<div class="search-location">
+						<h3>Location</h3>
+						<input class="radio" type="radio" id="5" value="5mi" name="Location">
+						<label for="5">5mi</label>
+						<input class="radio" type="radio" id="10" value="10mi" name="Location">
+						<label for="10">10mi</label>
+						<input class="radio" type="radio" id="15" value="15mi" name="Location">
+						<label for="15">15mi</label>
+						<input class="radio" type="radio" id="random-location" value="Random" name="Location">
+						<label for="random-location">Random</label>
+
+						<input type="text" placeholder="Enter Zip Code" name="Location">
+					</div>
+					<div class="search-options">
+						<button id="searchButton">Search</button>
+						<input type="reset" value="Reset">
+					</div>
+				</fieldset>
+			</form>
+			<div id="results"></div>
+		</section>
+		<pre id="log"></pre>
+
+
+
+		<section id="about">
+			<h2>About</h2>
+
+			<p>ShowScout makes finding live entertainment easy. Filter a search by your preferences and
+				results from a variety of ticketing providers will appear. Easily review upcoming shows, share with
+				friends,
+				and buy tickets for shows that interest you.</p>
+		</section>
+
+		<section id="sources">
+			<h2>Sources</h2>
+			<ul>
+				<li><a href="https://www.ticketmaster.com/" target="_blank" rel="noopener noreferrer">TicketMaster</a>
+				</li>
+			</ul>
+		</section>
+	</main>
+	<script src="scripts.js"></script>
+
+</body>
+
+</html>
